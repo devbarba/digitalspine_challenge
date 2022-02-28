@@ -1,3 +1,8 @@
+#nginx
+/docker/nginx/logs/*
+!/docker/nginx/logs/error.log
+!/docker/nginx/logs/access.log
+
 #postgres
 /docker/postgres-volume/*
 !/docker/postgres-volume/.gitkeep

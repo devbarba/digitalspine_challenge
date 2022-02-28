@@ -1,0 +1,20 @@
+version: '3.1'
+
+networks:
+  digital_network:
+    driver: overlay
+
+services:
+  dspine-postgres:
+    image: postgres:latest
+    container_name: dspine-postgres
+    restart: always
+    ports:
+      - '${POSTGRES_PORT}:${POSTGRES_PORT}'
+    networks:
+      - digital_network
+    volumes:
+      - ./docker/postgres-volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}

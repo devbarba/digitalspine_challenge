@@ -1,0 +1,16 @@
+#nginx
+/docker/nginx/logs/*
+!/docker/nginx/logs/error.log
+!/docker/nginx/logs/access.log
+
+#postgres
+/docker/postgres-volume/*
+!/docker/postgres-volume/.gitkeep
+
+#others
+node_modules
+dist
+.vscode
+.env
+yarn-error.log
+coverage

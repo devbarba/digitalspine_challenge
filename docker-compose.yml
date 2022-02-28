@@ -2,9 +2,20 @@ version: '3.1'
 
 networks:
   digital_network:
-    driver: overlay
+    driver: bridge
 
 services:
+  dspine-nginx:
+    image: nginx:latest
+    container_name: dspine-nginx
+    restart: always
+    ports:
+      - "${NGINX_HTTP_PORT}:80"
+      - "${NGINX_HTTPS_PORT}:443"
+    volumes:
+      # - ${NGINX_CONF_PATH}/default.conf:/etc/nginx/conf.d/default.conf
+      - ${NGINX_LOG_PATH}/error.log:/var/log/nginx/error.log
+      - ${NGINX_LOG_PATH}/access.log:/var/log/nginx/access.log
   dspine-postgres:
     image: postgres:latest
     container_name: dspine-postgres

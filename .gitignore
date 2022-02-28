@@ -1,0 +1,11 @@
+#postgres
+/docker/postgres-volume/*
+!/docker/postgres-volume/.gitkeep
+
+#others
+node_modules
+dist
+.vscode
+.env
+yarn-error.log
+coverage

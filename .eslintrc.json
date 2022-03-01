@@ -21,6 +21,7 @@
         "prettier"
     ],
     "rules": {
+        "@typescript-eslint/no-misused-new": "off",
         "no-underscore-dangle": "off",
         "@typescript-eslint/ban-ts-comment": "off",
         "import/no-dynamic-require": "off",

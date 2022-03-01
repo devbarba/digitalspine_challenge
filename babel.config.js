@@ -9,6 +9,15 @@ module.exports = {
         '@babel/preset-typescript',
     ],
     plugins: [
+        [
+            'module-resolver',
+            {
+                alias: {
+                    '@app': './src/app',
+                    '@interfaces/': './src/interfaces',
+                },
+            },
+        ],
         ['@babel/plugin-proposal-decorators', { legacy: true }],
         ['@babel/plugin-proposal-class-properties', { loose: true }],
         'babel-plugin-transform-typescript-metadata',

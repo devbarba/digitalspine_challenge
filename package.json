@@ -12,7 +12,7 @@
     "clean": "rm -rf ./dist && mkdir dist",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
     "test": "jest",
-    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "prettier-format": "prettier --config .prettier.config.js 'src/**/*.ts' --write",
     "lint": "eslint . --ext .ts"
   },
   "husky": {

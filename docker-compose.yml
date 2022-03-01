@@ -14,20 +14,21 @@ services:
     networks:
       - digital_network
     volumes:
-      # - ${NGINX_CONF_PATH}/default.conf:/etc/nginx/conf.d/default.conf
+      - ${NGINX_CONF_PATH}/default.conf:/etc/nginx/conf.d/default.conf
       - ${NGINX_LOG_PATH}/error.log:/var/log/nginx/error.log
       - ${NGINX_LOG_PATH}/access.log:/var/log/nginx/access.log
     depends_on:
       - dspine-application
   dspine-application:
     build: .
-    ports:
-        - '${APP_PORT}:${APP_PORT}'
     networks:
       - digital_network
     volumes:
+        - ./docker/scripts:/usr/dspine/scripts
         - .:/usr/dspine/app
+        - /usr/dspine/app/node_modules
     working_dir: /usr/dspine/app
+    command: sh -c "chmod +x /usr/dspine/scripts/init.sh && /usr/dspine/scripts/init.sh"
     depends_on:
         - dspine-postgres
         - dspine-redis

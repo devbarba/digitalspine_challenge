@@ -12,13 +12,8 @@
     "clean": "rm -rf ./dist && mkdir dist",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
     "test": "jest",
-    "prettier-format": "prettier --config .prettier.config.js 'src/**/*.ts' --write",
+    "prettier-format": "prettier --config prettier.config.js 'src/**/*.ts' --write",
     "lint": "eslint . --ext .ts"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run prettier-format && npm run lint"
-    }
   },
   "babel": {
     "plugins": [
@@ -56,7 +51,7 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-import-helpers": "^1.2.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "jest": "^27.5.1",
     "prettier": "^2.5.1",
     "ts-jest": "^27.1.3",

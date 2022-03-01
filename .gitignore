@@ -7,6 +7,10 @@
 /docker/postgres-volume/*
 !/docker/postgres-volume/.gitkeep
 
+#scripts
+/docker/scripts/*
+!/docker/scripts/init.sh
+
 #others
 node_modules
 dist

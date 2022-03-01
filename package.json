@@ -1,0 +1,12 @@
+{
+  "name": "digitalspine_challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:devbarba/digitalspine_challenge.git",
+  "author": "Joao Harbs <harbspj@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.2"
+  }
+}

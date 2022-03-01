@@ -1,9 +1,11 @@
 import App from '@app';
+import Http from '@middlewares/http';
 import express, { Application } from 'express';
 
 class Server {
     protected app: App;
     protected express: Application;
+    protected middlewareRegister: Http;
 
     constructor(app: App) {
         this.app = app;
@@ -15,6 +17,14 @@ class Server {
     }
 
     /**
+     * register: Middlewares and Route register;
+     */
+    register(): void {
+        this.middlewareRegister = Http.init(this.express);
+        this.middlewareRegister.mount();
+    }
+
+    /**
      * start: Start server and run any desirable callback.
      * @param beforeStart {() => void}
      */
@@ -23,6 +33,7 @@ class Server {
         const host = this.app.config('app.host', '0.0.0.0');
         const port = this.app.config('app.port', 9004);
 
+        this.register();
         this.express.listen(port, () => {
             console.log(`[${env}] Server :: Running @ http://${host}:${port}`);
             if (beforeStart) beforeStart();

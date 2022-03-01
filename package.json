@@ -5,7 +5,13 @@
   "repository": "git@github.com:devbarba/digitalspine_challenge.git",
   "author": "Joao Harbs <harbspj@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.3",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.2"
   }

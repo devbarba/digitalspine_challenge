@@ -1,4 +1,4 @@
-import IConfig from '@interfaces/config';
+import { IConfig, IRoute } from '@interfaces/common';
 import fs from 'fs';
 import path from 'path';
 
@@ -65,4 +65,26 @@ const getEnv = (
     return alternate;
 };
 
-export { autoloadConfig, getDir, getBaseDir, getEnv };
+/**
+ * autoloadRoutes: Auto load the api routes.
+ * @param base_dir string
+ * @returns all routes
+ */
+const autoloadRoutes = (base_dir: string): IRoute[] => {
+    const routeDir = path.join(base_dir, 'routes');
+
+    if (!fs.existsSync(routeDir)) throw 'route directory not exists';
+
+    const dir = fs.readdirSync(routeDir);
+    const routes: any[] = [];
+
+    dir.forEach((file) => {
+        const filename = path.join(routeDir, file);
+        const value = require(filename).default;
+        routes.push(value);
+    });
+
+    return routes;
+};
+
+export { autoloadConfig, getDir, getBaseDir, getEnv, autoloadRoutes };

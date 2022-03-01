@@ -24,7 +24,10 @@
         "baseUrl": "src",
         "paths": {
             "@app": ["app"],
-            "@interfaces/*": ["interfaces/*"]
+            "@server": ["server"],
+            "@boot/*": ["boot/*"],
+            "@interfaces/*": ["interfaces/*"],
+            "@utils/*": ["utils/*"]
         }
     },
     "include": ["src/**/*"],

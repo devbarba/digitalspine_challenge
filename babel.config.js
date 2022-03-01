@@ -14,7 +14,10 @@ module.exports = {
             {
                 alias: {
                     '@app': './src/app',
+                    '@server': './src/server',
+                    '@boot': './src/boot',
                     '@interfaces/': './src/interfaces',
+                    '@utils/': './src/utils',
                 },
             },
         ],

@@ -12,9 +12,15 @@
 !/docker/scripts/init.sh
 
 #others
-node_modules
-dist
 .vscode
+package-lock.json
 .env
-yarn-error.log
-coverage
+
+#backend
+backend/node_modules
+backend/dist
+backend/.env
+backend/.env.example
+backend/yarn-error.log
+backend/package-lock.json
+backend/coverage
